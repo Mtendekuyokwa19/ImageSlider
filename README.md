@@ -1,4 +1,4 @@
-# Etch-A-Sketch
+# Image Slideshow
 
 Tools used
 
