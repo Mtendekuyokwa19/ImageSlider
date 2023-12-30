@@ -32,12 +32,12 @@ let navgationDots=(()=>{
 
   let allNavdots=document.querySelectorAll('.navigationButton button')
 
-  let position={pos:1};
+  let position={pos:1,count:1};
   function changeColorOfbutton() {
     position.pos>3?position.pos=0:position.pos;
     makebtnWhite()
     allNavdots[position.pos++].style.setProperty("background-color","tomato")
-    
+    position.count++
    
     
   }
@@ -49,7 +49,7 @@ let navgationDots=(()=>{
     allNavdots[position.pos-2].style.setProperty("background-color","tomato")
   
     position.pos=pos-1;
-    
+    position.count-1;
     
   }
   function makebtnWhite() {
@@ -60,31 +60,22 @@ let navgationDots=(()=>{
     
   }
 
-  function skipingTo(index) {
-
-    
-      for (let i = 0; i < index; i++) {
-        
-        movingImages.nextPitureAlgorithm()
-      }
+ 
+     
       
    
        
    
     
-  }
+  
 
-  let counter=1;
-allNavdots.forEach(navdot=>{
-
-  navdot.addEventListener('click',function () {
-    
-    skipingTo(counter)
-    counter++
+for (let i = 0; i < allNavdots.length; i++) {
+  allNavdots[i].addEventListener('click',function () {
+    skipingTo(i)
     
   })
-
-})
+  
+}
 
 return {changeColorOfbutton,changeColorToprevious}
 })()
