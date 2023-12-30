@@ -38,49 +38,30 @@ img {
   transition: transform 300ms ease-in;
 }
 
-#left:hover{
-
-transform: translate(-10px);
-
-
-
-
+#left:hover {
+  transform: translate(-10px);
 }
-#right:hover{
-
+#right:hover {
   transform: translate(10px);
 }
-.navigationButton{
-
+.navigationButton {
   display: flex;
   gap: 20px;
   margin: 10px;
-
-
-
-
 }
 
-.navigationButton button{
-
-
+.navigationButton button {
   border: none;
   height: 10px;
   background-color: white;
-  
+
   transition: background-color 100ms ease-in;
 }
 
-.navigationButton button:hover{
-
-background-color: chocolate;
-
-
+.navigationButton button:hover {
+  background-color: chocolate;
 }
 
-#firstImage{
-
-  background-color:tomato;
-
-
+#firstImage {
+  background-color: tomato;
 }
