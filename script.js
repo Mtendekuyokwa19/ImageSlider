@@ -5,7 +5,7 @@ const movingImages = (() => {
 
   function previousPictureAlgorithm () {
     const pictures = document.querySelectorAll('img')
-    // navgationDots.changeColorToprevious()
+    navgationDots.changeColorToprevious()
     const pic = pictures[pictures.length - 1]
     slide.prepend(pic)
    
@@ -43,10 +43,12 @@ let navgationDots=(()=>{
   }
 
   function changeColorToprevious() {
-    // position.pos<1?position.pos=4:position.pos;
+    position.pos<2?position.pos=5:position.pos;
+    let pos=position.pos;
     makebtnWhite()
-    let pos=position.pos-1
-    allNavdots[pos-1].style.setProperty("background-color","tomato")
+    allNavdots[position.pos-2].style.setProperty("background-color","tomato")
+  
+    position.pos=pos-1;
     
     
   }
@@ -60,27 +62,23 @@ let navgationDots=(()=>{
 
   function skipingTo(index) {
 
-    if (index>position.pos) {
-      for (let i = 0; i < index-position.pos; i++) {
+    
+      for (let i = 0; i < index; i++) {
         
         movingImages.nextPitureAlgorithm()
       }
       
-    }
-    else if(index<position.pos){
-
-      for (let i = 0; i< position.pos-index; i++) {
-  movingImages.previousPictureAlgorithm()
+   
        
-      }
-    }
+   
+    
   }
 
-  let counter=2;
+  let counter=1;
 allNavdots.forEach(navdot=>{
 
   navdot.addEventListener('click',function () {
-  
+    
     skipingTo(counter)
     counter++
     
