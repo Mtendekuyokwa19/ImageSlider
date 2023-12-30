@@ -6,6 +6,7 @@ body {
   background-color: #1e1e1e;
   flex-direction: column;
   color: white;
+  padding: 20px;
 }
 
 .buttonAndslide {
@@ -34,4 +35,52 @@ img {
   align-self: center;
   background-color: transparent;
   border: none;
+  transition: transform 300ms ease-in;
+}
+
+#left:hover{
+
+transform: translate(-10px);
+
+
+
+
+}
+#right:hover{
+
+  transform: translate(10px);
+}
+.navigationButton{
+
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+
+
+
+
+}
+
+.navigationButton button{
+
+
+  border: none;
+  height: 10px;
+  background-color: white;
+  
+  transition: background-color 100ms ease-in;
+}
+
+.navigationButton button:hover{
+
+background-color: chocolate;
+
+
+}
+
+#firstImage{
+
+  background-color:tomato;
+
+
 }
