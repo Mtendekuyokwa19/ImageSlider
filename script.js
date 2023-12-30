@@ -1,3 +1,4 @@
+/* eslint-no-console:error */
 const movingImages = (() => {
   const slide = document.querySelector(".slide");
 
@@ -20,7 +21,7 @@ const movingImages = (() => {
 
   const leftbtn = document.querySelector("#left");
   leftbtn.addEventListener("click", previousPictureAlgorithm);
-  return { nextPitureAlgorithm, previousPictureAlgorithm };
+  return { nextPitureAlgorithm, previousPictureAlgorithm,slide };
   // window.setInterval(nextPitureAlgorithm,4000)
 })();
 
@@ -34,7 +35,7 @@ let navgationDots = (() => {
     allNavdots[position.pos++].style.setProperty("background-color", "tomato");
     position.count++;
 
-    console.log(position.pos);
+    
   }
 
   function changeColorToprevious() {
@@ -56,17 +57,20 @@ let navgationDots = (() => {
   }
 
   function skipingTo(index) {
-    for (let i = 0; i <= index - position.pos; i++) {
-      movingImages.nextPitureAlgorithm();
-      console.log(index, position.pos);
-    }
+    const pictures = document.querySelectorAll("img");
+    
+    let tempKeeper=pictures[index];
+    pictures[index].remove()
+    movingImages.slide.prepend(tempKeeper);
+   
+    makebtnWhite();
   }
 
   let size = allNavdots.length + 1;
   let counter = 1;
   for (let i = 0; i < 4; i++) {
     allNavdots[i].addEventListener("click", function () {
-      skipingTo(i + 1);
+      skipingTo(i);
     });
   }
 
